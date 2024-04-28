@@ -8,7 +8,7 @@
         <h1 class="article-title">{{title}}</h1>
       </header>
       <section class="gh-content gh-canvas">
-      {{#get "tags" limit="all" include="count.posts" order="name desc"}}
+      {{#get "tags" limit="all" include="count.posts" order="name asc"}}
         <ul>
           {{#foreach tags}}
             <li>
