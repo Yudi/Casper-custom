@@ -2,19 +2,26 @@
 
 {{#post}}
 
-<main id="site-main" class="site-main outer" role="main">
-  <div class="inner">
-    <header class="post-full-header">
-      <h1 class="post-full-title">{{title}}</h1>
-    </header>
-    {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
-    {{#foreach tags}}
-        <a href='{{ url }}'>
-        <h2>{{ name }} <small>({{ count.posts }})</small></h2>
-        </a>
-    {{/foreach}}
-    {{/get}}
-  </div>
-</main>
+  <main id="site-main" class="site-main">
+    <article class="inner">
+      <header class="article-header gh-canvas">
+        <h1 class="article-title">{{title}}</h1>
+      </header>
+      <section class="gh-content gh-canvas">
+      {{#get "tags" limit="all" include="count.posts" order="name desc"}}
+        <ul>
+          {{#foreach tags}}
+            <li>
+              <a href="{{url}}">
+                {{name}}
+                <small>({{count.posts}})</small>
+              </a>
+            </li>
+          {{/foreach}}
+        </ul>
+      {{/get}}
+      </section>
+    </article>
+  </main>
 
 {{/post}}
