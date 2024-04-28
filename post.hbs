@@ -13,13 +13,13 @@ into the {body} tag of the default.hbs template --}}
     <header class="article-header gh-canvas">
 
         <div class="article-tag post-card-tags">
-            {{#primary_tag}}
+            {{#tags separator=""}}
                 <span class="post-card-primary-tag">
                     <a href="{{url}}">{{name}}</a>
                 </span>
-            {{/primary_tag}}
+            {{/tags}}
             {{#if featured}}
-                <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
+                <span class="post-card-featured">{{> "icons/fire"}} Em destaque</span>
             {{/if}}
         </div>
 
@@ -104,8 +104,8 @@ into the {body} tag of the default.hbs template --}}
         <div class="inner">
             {{#if @custom.email_signup_text}}<h2 class="footer-cta-title">{{@custom.email_signup_text}}</h2>{{/if}}
             <a class="footer-cta-button" href="#/portal" data-portal>
-                <div class="footer-cta-input">Enter your email</div>
-                <span>Subscribe</span>
+                <div class="footer-cta-input">Seu e-mail</div>
+                <span>Inscrever-se</span>
             </a>
         </div>
     </section>
